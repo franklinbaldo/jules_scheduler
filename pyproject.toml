@@ -1,0 +1,25 @@
+[project]
+name = "jules-scheduler"
+version = "0.1.0"
+description = "Run Jules prompt templates from .jules/ on a schedule (GitHub Actions + uvx)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "requests",
+    "jinja2",
+    "pyyaml",
+    "croniter",
+]
+
+[project.scripts]
+jules-scheduler = "jules_scheduler.cli:main"
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
